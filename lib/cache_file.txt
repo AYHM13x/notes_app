@@ -1,0 +1,14 @@
+appBar: AppBar(
+        title: Text("Notes"),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.search),
+          ),
+        ],
+      ),
+
+       floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(Icons.add),
+      ),
