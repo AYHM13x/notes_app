@@ -12,3 +12,28 @@ appBar: AppBar(
         onPressed: () {},
         child: Icon(Icons.add),
       ),
+
+
+
+      Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                "title",
+                style: TextStyle(
+                  fontSize: 52,
+                  color: Colors.black,
+                ),
+              ),
+              CustomDeleteIconButton(),
+            ],
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          DescrationOfNote(),
+          SizedBox(
+            height: 50,
+          ),
+          DateOfNote(),
+
