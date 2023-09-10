@@ -10,16 +10,16 @@ class AddNoteSheet extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: ListView(
+      child: Column(
         children: [
           const SizedBox(
-            height: 10,
+            height: 32,
           ),
           CustomTextField(
             hintText: "Title",
           ),
           const SizedBox(
-            height: 20,
+            height: 16,
           ),
           CustomTextField(
             hintText: "Content",
