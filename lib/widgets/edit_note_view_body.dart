@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:notes_app/custom_widgets/custom_appbar.dart';
-// import 'package:notes_app/custom_widgets/custom_note_item.dart';
-import 'package:notes_app/custom_widgets/notes_list_view.dart';
+import 'package:notes_app/custom_widgets/custom_text_field.dart';
 
-class NoteViewBody extends StatelessWidget {
-  const NoteViewBody({super.key});
+class EditNoteViewBody extends StatelessWidget {
+  const EditNoteViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,10 +14,14 @@ class NoteViewBody extends StatelessWidget {
           SizedBox(
             height: 32,
           ),
-          CustomAppBar(
-            title: "Notes",
+          CustomAppBar(title: "Edit Note"),
+          SizedBox(
+            height: 16,
           ),
-          NotesListView(),
+          //CustomTextField(hintText: ,),
+          SizedBox(
+            height: 16,
+          ),
         ],
       ),
     );
