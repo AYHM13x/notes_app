@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:notes_app/constants.dart';
-import 'package:notes_app/custom_widgets/add_note_bottom_sheet.dart';
+import 'package:notes_app/custom_widgets/add_edit_note_bottom_sheet.dart';
 
 class CustomFloatingActionButton extends StatelessWidget {
   const CustomFloatingActionButton({
@@ -23,7 +23,9 @@ class CustomFloatingActionButton extends StatelessWidget {
               return Padding(
                 padding: EdgeInsets.only(
                     bottom: MediaQuery.of(context).viewInsets.bottom),
-                child: const AddNoteSheet(),
+                child: const AddEditNoteSheet(
+                  textOfButton: "Add",
+                ),
               );
             });
       },

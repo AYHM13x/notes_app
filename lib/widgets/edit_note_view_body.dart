@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:notes_app/custom_widgets/add_edit_note_bottom_sheet.dart';
 import 'package:notes_app/custom_widgets/custom_appbar.dart';
 import 'package:notes_app/custom_widgets/custom_text_field.dart';
 
@@ -14,11 +16,19 @@ class EditNoteViewBody extends StatelessWidget {
           SizedBox(
             height: 32,
           ),
-          CustomAppBar(title: "Edit Note"),
+          CustomAppBar(
+            title: "Edit Note",
+            icon: Icon(
+              Icons.check,
+              size: 32,
+            ),
+          ),
           SizedBox(
             height: 16,
           ),
-          //CustomTextField(hintText: ,),
+          AddEditNoteSheet(
+            textOfButton: "Save",
+          ),
           SizedBox(
             height: 16,
           ),
