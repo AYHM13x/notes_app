@@ -23,7 +23,7 @@ class CustomFloatingActionButton extends StatelessWidget {
               return Padding(
                 padding: EdgeInsets.only(
                     bottom: MediaQuery.of(context).viewInsets.bottom),
-                child: const AddEditNoteSheet(
+                child: const NoteSheet(
                   textOfButton: "Add",
                 ),
               );
