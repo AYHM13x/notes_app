@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app/custom_widgets/custom_button.dart';
 import 'package:notes_app/custom_widgets/custom_text_field.dart';
 
 class AddNoteSheet extends StatelessWidget {
@@ -10,42 +11,31 @@ class AddNoteSheet extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: Column(
-        children: [
-          const SizedBox(
-            height: 32,
-          ),
-          CustomTextField(
-            hintText: "Title",
-          ),
-          const SizedBox(
-            height: 16,
-          ),
-          CustomTextField(
-            hintText: "Content",
-            maxLines: 5,
-          ),
-          const SizedBox(
-            height: 50,
-          ),
-          Container(
-            width: double.maxFinite,
-            height: 50,
-            child: ElevatedButton(
-              onPressed: () {},
-              style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xff53DCC9),
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20))),
-              child: const Text(
-                "Add",
-                style: TextStyle(
-                  color: Colors.black,
-                ),
-              ),
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            const SizedBox(
+              height: 32,
             ),
-          )
-        ],
+            CustomTextField(
+              hintText: "Title",
+            ),
+            const SizedBox(
+              height: 16,
+            ),
+            CustomTextField(
+              hintText: "Content",
+              maxLines: 5,
+            ),
+            const SizedBox(
+              height: 32,
+            ),
+            const CustomButton(),
+            const SizedBox(
+              height: 16,
+            ),
+          ],
+        ),
       ),
     );
   }
