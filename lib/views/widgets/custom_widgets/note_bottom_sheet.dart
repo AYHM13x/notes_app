@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:notes_app/custom_widgets/add_note_form.dart';
+import 'package:notes_app/views/widgets/custom_widgets/add_note_form.dart';
 
 class NoteSheet extends StatelessWidget {
   const NoteSheet({
