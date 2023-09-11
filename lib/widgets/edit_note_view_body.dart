@@ -11,40 +11,52 @@ class EditNoteViewBody extends StatelessWidget {
     return const Padding(
       padding: EdgeInsets.all(16.0),
       child: SingleChildScrollView(
-        child: Column(
-          children: [
-            SizedBox(
-              height: 32,
-            ),
-            CustomAppBar(
-              title: "Edit Note",
-              icon: Icon(
-                Icons.check,
-                size: 32,
-              ),
-            ),
-            SizedBox(
-              height: 16,
-            ),
-            CustomTextField(
-              hintText: "Title",
-            ),
-            SizedBox(
-              height: 16,
-            ),
-            CustomTextField(
-              hintText: "Content",
-              maxLines: 16,
-            ),
-            SizedBox(
-              height: 22,
-            ),
-            CustomButton(
-              text: "Save",
-            ),
-          ],
-        ),
+        child: EditNoteForm(),
       ),
+    );
+  }
+}
+
+class EditNoteForm extends StatelessWidget {
+  const EditNoteForm({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        const SizedBox(
+          height: 32,
+        ),
+        const CustomAppBar(
+          title: "Edit Note",
+          icon: Icon(
+            Icons.check,
+            size: 32,
+          ),
+        ),
+        const SizedBox(
+          height: 16,
+        ),
+        const CustomTextFormField(
+          hintText: "Title",
+        ),
+        const SizedBox(
+          height: 16,
+        ),
+        const CustomTextFormField(
+          hintText: "Content",
+          maxLines: 16,
+        ),
+        const SizedBox(
+          height: 22,
+        ),
+        CustomButton(
+          text: "Save",
+          onPressed: () {},
+        ),
+      ],
     );
   }
 }

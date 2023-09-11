@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:notes_app/constants.dart';
-import 'package:notes_app/custom_widgets/add_edit_note_bottom_sheet.dart';
+import 'package:notes_app/custom_widgets/note_bottom_sheet.dart';
 
 class CustomFloatingActionButton extends StatelessWidget {
   const CustomFloatingActionButton({
