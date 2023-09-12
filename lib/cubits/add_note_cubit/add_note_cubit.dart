@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:meta/meta.dart';
 import 'package:notes_app/constants.dart';
@@ -15,6 +16,7 @@ class AddNoteCubit extends Cubit<AddNoteState> {
     try {
       Box<NoteModel> noteBox = Hive.box<NoteModel>(kNotesBox);
       await noteBox.add(note);
+      debugPrint("color value = ${note.dateTime}");
 
       emit(AddNoteSuccess());
     } catch (e) {
