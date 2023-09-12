@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_app/constants.dart';
+import 'package:notes_app/cubits/add_note_cubit/add_note_cubit.dart';
 import 'package:notes_app/views/widgets/custom_widgets/note_bottom_sheet.dart';
 
 class CustomFloatingActionButton extends StatelessWidget {
@@ -12,11 +14,9 @@ class CustomFloatingActionButton extends StatelessWidget {
     return FloatingActionButton(
       onPressed: () {
         showModalBottomSheet(
-            //isScrollControlled: true,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(20.0),
             ),
-            //isScrollControlled: true,
             backgroundColor: Colors.grey.shade800,
             context: context,
             builder: (context) {
