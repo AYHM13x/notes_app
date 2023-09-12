@@ -14,18 +14,16 @@ class CustomFloatingActionButton extends StatelessWidget {
     return FloatingActionButton(
       onPressed: () {
         showModalBottomSheet(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20.0),
-            ),
-            backgroundColor: Colors.grey.shade800,
-            context: context,
-            builder: (context) {
-              return Padding(
-                padding: EdgeInsets.only(
-                    bottom: MediaQuery.of(context).viewInsets.bottom),
-                child: const NoteSheet(),
-              );
-            });
+          isScrollControlled: true,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20.0),
+          ),
+          backgroundColor: Colors.grey.shade800,
+          context: context,
+          builder: (context) {
+            return const NoteSheet();
+          },
+        );
       },
       backgroundColor: kPrimaryColor,
       tooltip: "Add Note",
