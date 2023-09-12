@@ -13,11 +13,10 @@ class NoteSheet extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<AddNoteCubit, AddNoteState>(
       listener: (context, state) {
-        if (state is AddNoteLoading) {
-        } else if (state is AddNoteSuccess) {
+        if (state is AddNoteSuccess) {
           Navigator.pop(context);
         } else if (state is AddNoteFailure) {
-          print("fail ${state.errMessage}");
+          print("failed cause ${state.errMessage}");
         }
       },
       builder: (context, state) {

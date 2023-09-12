@@ -23,7 +23,7 @@ class CustomFloatingActionButton extends StatelessWidget {
               return Padding(
                 padding: EdgeInsets.only(
                     bottom: MediaQuery.of(context).viewInsets.bottom),
-                child: NoteSheet(),
+                child: const NoteSheet(),
               );
             });
       },
