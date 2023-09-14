@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:notes_app/constants.dart';
 import 'package:notes_app/cubits/add_note_cubit/add_note_cubit.dart';
 import 'package:notes_app/models/note_model.dart';
 import 'package:notes_app/views/widgets/color_list.dart';
@@ -22,8 +21,6 @@ class _AddNoteFormState extends State<AddNoteForm> {
   AutovalidateMode validate = AutovalidateMode.disabled;
 
   String? title, content;
-  int? choosedColor;
-  int currentIndex = 0;
   void validation() {
     if (formKey.currentState!.validate()) {
       formKey.currentState!.save();
@@ -31,7 +28,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
           title: title,
           content: content,
           dateTime: DateTime.now().toString(),
-          color: kColorListOfNotes[currentIndex]);
+          color: BlocProvider.of<AddNoteCubit>(context).color);
       BlocProvider.of<AddNoteCubit>(context).addNote(note);
     } else {
       validate = AutovalidateMode.always;

@@ -69,7 +69,7 @@ class _EditNoteFormState extends State<EditNoteForm> {
         const SizedBox(
           height: 8,
         ),
-        const ColorList(),
+        //const ColorList(),
         const SizedBox(
           height: 8,
         ),
