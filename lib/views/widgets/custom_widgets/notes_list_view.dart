@@ -11,7 +11,6 @@ class NotesListView extends StatelessWidget {
   //final ScrollController controller = ScrollController();
   @override
   Widget build(BuildContext context) {
-    //BlocProvider.of<AllNotesCubit>(context).fetchAllNotes();
     return Expanded(
       child: BlocBuilder<AllNotesCubit, AllNotesState>(
         builder: (context, state) {
