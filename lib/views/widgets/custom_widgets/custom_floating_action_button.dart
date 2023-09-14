@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:notes_app/constants.dart';
-import 'package:notes_app/views/widgets/custom_widgets/note_sheet.dart';
+import 'package:notes_app/views/widgets/add_note_sheet.dart';
 
 class CustomFloatingActionButton extends StatelessWidget {
   const CustomFloatingActionButton({
@@ -19,7 +19,7 @@ class CustomFloatingActionButton extends StatelessWidget {
           backgroundColor: Colors.grey.shade800,
           context: context,
           builder: (context) {
-            return const NoteSheet();
+            return const AddNoteSheet();
           },
         );
       },

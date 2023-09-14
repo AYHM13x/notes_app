@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_app/cubits/all_notes_cubit/all_notes_cubit.dart';
-import 'package:notes_app/views/widgets/custom_widgets/custom_appbar.dart';
-import 'package:notes_app/views/widgets/custom_widgets/notes_list_view.dart';
+import 'package:notes_app/views/widgets/custom_widgets/custom_app_bar.dart';
+
+import 'package:notes_app/views/widgets/notes_list_view.dart';
 
 class NoteViewBody extends StatefulWidget {
   const NoteViewBody({super.key});

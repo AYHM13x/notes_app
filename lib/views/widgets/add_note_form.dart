@@ -56,7 +56,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
           ),
           BlocBuilder<AddNoteCubit, AddNoteState>(
             builder: (context, state) {
-              return CustomButton(
+              return CustomNormalButton(
                 isLoading: state is AddNoteLoading ? true : false,
                 text: "Add",
                 onPressed: () {

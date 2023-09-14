@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:notes_app/constants.dart';
 
-class CustomButton extends StatelessWidget {
-  const CustomButton({
+class CustomNormalButton extends StatelessWidget {
+  const CustomNormalButton({
     super.key,
     required this.text,
     required this.onPressed,

@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_app/cubits/add_note_cubit/add_note_cubit.dart';
 import 'package:notes_app/cubits/all_notes_cubit/all_notes_cubit.dart';
-import 'package:notes_app/views/widgets/custom_widgets/add_note_form.dart';
+import 'package:notes_app/views/widgets/add_note_form.dart';
 
-class NoteSheet extends StatelessWidget {
-  const NoteSheet({
+class AddNoteSheet extends StatelessWidget {
+  const AddNoteSheet({
     super.key,
   });
 
