@@ -37,3 +37,7 @@ appBar: AppBar(
           ),
           DateOfNote(),
 
+void initState(){
+  BlocProvider.of<AllNotesCubit>(context).fetchAllNotes();
+  super.initState();
+}

@@ -8,40 +8,30 @@ class NotesListView extends StatelessWidget {
   const NotesListView({
     super.key,
   });
-
+  //final ScrollController controller = ScrollController();
   @override
   Widget build(BuildContext context) {
-    BlocProvider.of<AllNotesCubit>(context).fetchAllNotes();
+    //BlocProvider.of<AllNotesCubit>(context).fetchAllNotes();
     return Expanded(
       child: BlocBuilder<AllNotesCubit, AllNotesState>(
         builder: (context, state) {
-          if (state is AllNotesSuccess) {
-            List<NoteModel> notesList = state.notes;
-            return Padding(
-              padding: const EdgeInsets.symmetric(vertical: 16),
-              child: ListView.builder(
-                padding: EdgeInsets.zero,
-                itemCount: notesList.length,
-                itemBuilder: (context, index) {
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 4),
-                    child: NoteItem(
-                      note: notesList[index],
-                    ),
-                  );
-                },
-              ),
-            );
-          }
-          if (state is AllNotesFailure) {
-            return const Center(
-              child: Text("I can't fetch your notes"),
-            );
-          } else {
-            return const Center(
-              child: Text("there is something wrong"),
-            );
-          }
+          List<NoteModel> notesList =
+              BlocProvider.of<AllNotesCubit>(context).notesList!;
+          return Padding(
+            padding: const EdgeInsets.symmetric(vertical: 16),
+            child: ListView.builder(
+              padding: EdgeInsets.zero,
+              itemCount: notesList.length,
+              itemBuilder: (context, index) {
+                return Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 4),
+                  child: NoteItem(
+                    note: notesList[index],
+                  ),
+                );
+              },
+            ),
+          );
         },
       ),
     );
