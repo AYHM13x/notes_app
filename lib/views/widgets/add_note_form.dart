@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_app/constants.dart';
-import "dart:math";
 import 'package:notes_app/cubits/add_note_cubit/add_note_cubit.dart';
 import 'package:notes_app/models/note_model.dart';
+import 'package:notes_app/views/widgets/color_list.dart';
 import 'package:notes_app/views/widgets/custom_widgets/custom_button.dart';
-import 'package:notes_app/views/widgets/custom_widgets/color_item.dart';
 import 'package:notes_app/views/widgets/custom_widgets/custom_text_field.dart';
 
 class AddNoteForm extends StatefulWidget {
@@ -24,6 +23,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
 
   String? title, content;
   int? choosedColor;
+  int currentIndex = 0;
   void validation() {
     if (formKey.currentState!.validate()) {
       formKey.currentState!.save();
@@ -31,7 +31,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
           title: title,
           content: content,
           dateTime: DateTime.now().toString(),
-          color: choosedColor ?? Colors.grey.value);
+          color: kColorListOfNotes[currentIndex]);
       BlocProvider.of<AddNoteCubit>(context).addNote(note);
     } else {
       validate = AutovalidateMode.always;
@@ -68,22 +68,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
           const SizedBox(
             height: 16,
           ),
-          SizedBox(
-            height: 58,
-            child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              itemCount: kColorListOfNotes.length,
-              itemExtent: 62,
-              itemBuilder: (content, index) {
-                return ColorItem(
-                  color: kColorListOfNotes[index],
-                  onTap: () {
-                    choosedColor = kColorListOfNotes[index];
-                  },
-                );
-              },
-            ),
-          ),
+          const ColorList(),
           const SizedBox(
             height: 20,
           ),

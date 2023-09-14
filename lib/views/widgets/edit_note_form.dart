@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_app/cubits/all_notes_cubit/all_notes_cubit.dart';
 import 'package:notes_app/models/note_model.dart';
+import 'package:notes_app/views/widgets/color_list.dart';
 import 'package:notes_app/views/widgets/custom_widgets/custom_app_bar.dart';
 import 'package:notes_app/views/widgets/custom_widgets/custom_button.dart';
 import 'package:notes_app/views/widgets/custom_widgets/custom_text_field.dart';
@@ -60,13 +61,17 @@ class _EditNoteFormState extends State<EditNoteForm> {
         CustomTextFormField(
           hintText: "Content",
           oldValue: widget.note.content!,
-          maxLines: 16,
+          maxLines: 14,
           onChange: (value) {
             content = value;
           },
         ),
         const SizedBox(
-          height: 22,
+          height: 8,
+        ),
+        const ColorList(),
+        const SizedBox(
+          height: 8,
         ),
         CustomNormalButton(
           text: "Save",

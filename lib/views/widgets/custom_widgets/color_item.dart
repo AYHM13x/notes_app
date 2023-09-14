@@ -1,22 +1,31 @@
 import 'package:flutter/material.dart';
-import 'package:notes_app/constants.dart';
 
 class ColorItem extends StatelessWidget {
   const ColorItem({
     super.key,
     required this.color,
-    required this.onTap,
+    this.isSelected = false,
   });
   final int color;
-  final Function() onTap;
+  final bool isSelected;
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: CircleAvatar(
-        backgroundColor: Color(color),
-        radius: 29,
-      ),
-    );
+    return isSelected
+        ? CircleAvatar(
+            backgroundColor: Colors.green,
+            radius: 29,
+            child: CircleAvatar(
+              backgroundColor: Color(color),
+              radius: 25,
+            ),
+          )
+        : CircleAvatar(
+            backgroundColor: Colors.white,
+            radius: 29,
+            child: CircleAvatar(
+              backgroundColor: Color(color),
+              radius: 25,
+            ),
+          );
   }
 }
