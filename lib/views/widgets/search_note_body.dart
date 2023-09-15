@@ -19,11 +19,11 @@ class _SearchNoteBodyState extends State<SearchNoteBody> {
 
   List<NoteModel>? filteredNoteList;
 
-  @override
-  void initState() {
-    BlocProvider.of<AllNotesCubit>(context).fetchAllNotes();
-    super.initState();
-  }
+  // @override
+  // void initState() {
+  //   BlocProvider.of<AllNotesCubit>(context).fetchAllNotes();
+  //   super.initState();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -42,17 +42,8 @@ class _SearchNoteBodyState extends State<SearchNoteBody> {
         Expanded(
           child: BlocBuilder<AllNotesCubit, AllNotesState>(
             builder: (context, state) {
-              if (BlocProvider.of<AllNotesCubit>(context).filteredNoteList ==
-                  null) {
-                BlocProvider.of<AllNotesCubit>(context)
-                    .searchNote(search ?? "");
-                filteredNoteList =
-                    BlocProvider.of<AllNotesCubit>(context).filteredNoteList!;
-              } else {
-                filteredNoteList =
-                    BlocProvider.of<AllNotesCubit>(context).filteredNoteList!;
-              }
-
+              filteredNoteList =
+                  BlocProvider.of<AllNotesCubit>(context).filteredNoteList!;
               return Padding(
                 padding: const EdgeInsets.only(top: 16, bottom: 4),
                 child: ListView.builder(
