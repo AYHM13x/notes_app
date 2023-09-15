@@ -10,11 +10,18 @@ class AllNotesCubit extends Cubit<AllNotesState> {
   AllNotesCubit() : super(AllNotesInitial());
 
   List<NoteModel>? notesList;
+  List<NoteModel>? filteredNoteList;
   int color = kColorListOfNotes[0];
 
   fetchAllNotes() {
     Box<NoteModel> noteBox = Hive.box<NoteModel>(kNotesBox);
     notesList = noteBox.values.toList();
+    emit(AllNotesSuccess());
+  }
+
+  searchNote(String search) {
+    filteredNoteList =
+        notesList!.where((s) => s.title!.contains(search)).toList();
     emit(AllNotesSuccess());
   }
 }

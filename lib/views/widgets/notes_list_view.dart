@@ -8,7 +8,7 @@ class NotesListView extends StatelessWidget {
   const NotesListView({
     super.key,
   });
-  //final ScrollController controller = ScrollController();
+
   @override
   Widget build(BuildContext context) {
     return Expanded(
@@ -17,7 +17,7 @@ class NotesListView extends StatelessWidget {
           List<NoteModel> notesList =
               BlocProvider.of<AllNotesCubit>(context).notesList!;
           return Padding(
-            padding: const EdgeInsets.symmetric(vertical: 16),
+            padding: const EdgeInsets.only(top: 16, bottom: 4),
             child: ListView.builder(
               padding: EdgeInsets.zero,
               itemCount: notesList.length,

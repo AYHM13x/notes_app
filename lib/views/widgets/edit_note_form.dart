@@ -5,7 +5,7 @@ import 'package:notes_app/cubits/all_notes_cubit/all_notes_cubit.dart';
 import 'package:notes_app/models/note_model.dart';
 import 'package:notes_app/views/widgets/add_note_color_list.dart';
 import 'package:notes_app/views/widgets/custom_widgets/custom_app_bar.dart';
-import 'package:notes_app/views/widgets/custom_widgets/custom_button.dart';
+import 'package:notes_app/views/widgets/custom_widgets/custom_normal_button.dart';
 import 'package:notes_app/views/widgets/custom_widgets/custom_text_field.dart';
 import 'package:notes_app/views/widgets/edit_note_color_list.dart';
 

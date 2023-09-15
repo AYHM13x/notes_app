@@ -11,6 +11,7 @@ class CustomTextFormField extends StatelessWidget {
     this.onSaved,
     this.oldValue,
     this.onChange,
+    this.onFieldSubmitted,
   });
 
   final String hintText;
@@ -18,6 +19,7 @@ class CustomTextFormField extends StatelessWidget {
   final Function(String)? onChange;
   final void Function(String?)? onSaved;
   final String? oldValue;
+  final void Function(String)? onFieldSubmitted;
 
   @override
   Widget build(BuildContext context) {
@@ -25,6 +27,7 @@ class CustomTextFormField extends StatelessWidget {
       initialValue: oldValue,
       onSaved: onSaved,
       onChanged: onChange,
+      onFieldSubmitted: onFieldSubmitted,
       validator: (data) {
         if ((data?.isEmpty ?? true)) {
           return "field is required";
