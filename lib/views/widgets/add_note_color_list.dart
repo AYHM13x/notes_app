@@ -4,14 +4,14 @@ import 'package:notes_app/constants.dart';
 import 'package:notes_app/cubits/add_note_cubit/add_note_cubit.dart';
 import 'package:notes_app/views/widgets/custom_widgets/color_item.dart';
 
-class ColorList extends StatefulWidget {
-  const ColorList({super.key});
+class AddNoteColorList extends StatefulWidget {
+  const AddNoteColorList({super.key});
 
   @override
-  State<ColorList> createState() => _ColorListState();
+  State<AddNoteColorList> createState() => _AddNoteColorListState();
 }
 
-class _ColorListState extends State<ColorList> {
+class _AddNoteColorListState extends State<AddNoteColorList> {
   int currentIndex = 0;
 
   @override
