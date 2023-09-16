@@ -13,6 +13,7 @@ class AllNotesCubit extends Cubit<AllNotesState> {
   List<NoteModel>? filteredNoteList;
   int color = kColorListOfNotes[0];
 
+  //get all notes as a list
   fetchAllNotes() {
     Box<NoteModel> noteBox = Hive.box<NoteModel>(kNotesBox);
     notesList = noteBox.values.toList();
@@ -20,6 +21,7 @@ class AllNotesCubit extends Cubit<AllNotesState> {
     emit(AllNotesSuccess());
   }
 
+  //search by title and get all notes have that title
   searchNote(String search) {
     filteredNoteList =
         notesList!.where((s) => s.title!.contains(search)).toList();

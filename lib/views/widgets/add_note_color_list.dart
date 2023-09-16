@@ -26,11 +26,13 @@ class _AddNoteColorListState extends State<AddNoteColorList> {
             padding: const EdgeInsets.symmetric(horizontal: 3),
             child: GestureDetector(
               onTap: () {
-                currentIndex = index;
+                currentIndex = index; //chnage current index
+                //change color of new note
                 BlocProvider.of<AddNoteCubit>(context).color =
                     kColorListOfNotes[index];
                 setState(() {});
               },
+              //circle color list with bool of selected color
               child: ColorItem(
                 color: kColorListOfNotes[index],
                 isSelected: currentIndex == index ? true : false,

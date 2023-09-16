@@ -36,6 +36,7 @@ class _NoteViewBodyState extends State<NoteViewBody> {
               size: 32,
             ),
             onPressed: () {
+              //go to search view to search notes
               Navigator.push(
                 context,
                 MaterialPageRoute(

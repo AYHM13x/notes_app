@@ -12,6 +12,7 @@ class AddNoteCubit extends Cubit<AddNoteState> {
 
   int color = kColorListOfNotes[0];
 
+  //add note method
   addNote(NoteModel note) async {
     emit(AddNoteLoading());
 

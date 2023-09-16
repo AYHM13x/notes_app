@@ -16,13 +16,15 @@ class AddNoteSheet extends StatelessWidget {
       child: BlocConsumer<AddNoteCubit, AddNoteState>(
         listener: (context, state) {
           if (state is AddNoteSuccess) {
+            //fetch all notes after add note
             BlocProvider.of<AllNotesCubit>(context).fetchAllNotes();
             Navigator.pop(context);
           } else if (state is AddNoteFailure) {
-            print("failed cause ${state.errMessage}");
+            debugPrint("failed cause ${state.errMessage}");
           }
         },
         builder: (context, state) {
+          //padding when keyboard show
           var keyBoardIsShow = MediaQuery.of(context).viewInsets.bottom;
           return AbsorbPointer(
             absorbing: state is AddNoteLoading ? true : false,

@@ -14,6 +14,7 @@ class NotesListView extends StatelessWidget {
     return Expanded(
       child: BlocBuilder<AllNotesCubit, AllNotesState>(
         builder: (context, state) {
+          //fetch all notes in hive DB
           List<NoteModel> notesList =
               BlocProvider.of<AllNotesCubit>(context).notesList!;
           return Padding(

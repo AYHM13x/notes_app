@@ -11,23 +11,20 @@ class CustomTextFormField extends StatelessWidget {
     this.onSaved,
     this.oldValue,
     this.onChange,
-    this.onFieldSubmitted,
   });
 
   final String hintText;
   final int maxLines;
-  final Function(String)? onChange;
+  final void Function(String)? onChange;
   final void Function(String?)? onSaved;
   final String? oldValue;
-  final void Function(String)? onFieldSubmitted;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      initialValue: oldValue,
-      onSaved: onSaved,
-      onChanged: onChange,
-      onFieldSubmitted: onFieldSubmitted,
+      initialValue: oldValue, //if i want to edit note show current value
+      onSaved: onSaved, //if i want to add note i want to save value
+      onChanged: onChange, //if i want to edit note
       validator: (data) {
         if ((data?.isEmpty ?? true)) {
           return "field is required";
@@ -35,21 +32,23 @@ class CustomTextFormField extends StatelessWidget {
           return null;
         }
       },
-      cursorColor: kPrimaryColor,
-      textAlign: TextAlign.left,
-      maxLines: maxLines,
+      cursorColor: kPrimaryColor, //color of cursor
+      textAlign: TextAlign.left, //place of text
+      maxLines: maxLines, //max of empty lines
       style: const TextStyle(
-        color: kPrimaryColor,
+        color: kPrimaryColor, // color of typing text
       ),
       decoration: InputDecoration(
+        //padding of content
         contentPadding: const EdgeInsets.symmetric(
           vertical: 30.0,
           horizontal: 20.0,
         ),
-        hintText: hintText,
+        hintText: hintText, //hint to user what field talking about
         hintStyle: const TextStyle(
           color: kPrimaryColor,
         ),
+        //border of text field
         border: rounderBorder(color: Colors.white),
         enabledBorder: rounderBorder(color: Colors.white),
         focusedBorder: rounderBorder(color: kPrimaryColor),

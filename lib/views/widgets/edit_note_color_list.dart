@@ -26,11 +26,13 @@ class _EditNoteColorListState extends State<EditNoteColorList> {
             padding: const EdgeInsets.symmetric(horizontal: 3),
             child: GestureDetector(
               onTap: () {
-                currentIndex = index;
+                currentIndex = index; //chnage current index
+                //change color of old note
                 BlocProvider.of<AllNotesCubit>(context).color =
                     kColorListOfNotes[index];
                 setState(() {});
               },
+              //circle color list with bool of selected color
               child: ColorItem(
                 color: kColorListOfNotes[index],
                 isSelected: currentIndex == index ? true : false,

@@ -12,6 +12,7 @@ class SearchNotesListView extends StatelessWidget {
     return Expanded(
       child: BlocBuilder<AllNotesCubit, AllNotesState>(
         builder: (context, state) {
+          //fetch filtered notes list
           List<NoteModel> filteredNoteList =
               BlocProvider.of<AllNotesCubit>(context).filteredNoteList!;
           return Padding(

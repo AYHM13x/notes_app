@@ -11,6 +11,7 @@ class CustomFloatingActionButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return FloatingActionButton(
       onPressed: () {
+        //this bottom sheet show up when press on icon bellow
         showModalBottomSheet(
           isScrollControlled: true,
           shape: RoundedRectangleBorder(
@@ -25,6 +26,7 @@ class CustomFloatingActionButton extends StatelessWidget {
       },
       backgroundColor: kPrimaryColor,
       tooltip: "Add Note",
+      //this is icon
       child: const Icon(
         Icons.note_add,
         size: 36,

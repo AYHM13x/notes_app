@@ -4,7 +4,7 @@ import 'package:notes_app/cubits/add_note_cubit/add_note_cubit.dart';
 import 'package:notes_app/models/note_model.dart';
 import 'package:notes_app/views/widgets/add_note_color_list.dart';
 import 'package:notes_app/views/widgets/custom_widgets/custom_normal_button.dart';
-import 'package:notes_app/views/widgets/custom_widgets/custom_text_field.dart';
+import 'package:notes_app/views/widgets/custom_widgets/custom_text_form_field.dart';
 
 class AddNoteForm extends StatefulWidget {
   const AddNoteForm({
@@ -22,13 +22,15 @@ class _AddNoteFormState extends State<AddNoteForm> {
 
   String? title, content;
   void validation() {
+    //if field not empty enter in this if
     if (formKey.currentState!.validate()) {
-      formKey.currentState!.save();
+      formKey.currentState!.save(); //save input of user
       NoteModel note = NoteModel(
           title: title,
           content: content,
           dateTime: DateTime.now().toString(),
           color: BlocProvider.of<AddNoteCubit>(context).color);
+      //add note
       BlocProvider.of<AddNoteCubit>(context).addNote(note);
     } else {
       validate = AutovalidateMode.always;

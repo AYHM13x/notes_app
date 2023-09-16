@@ -25,6 +25,7 @@ class CustomNormalButton extends StatelessWidget {
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20))),
         child: isLoading
+            //when i press on button is loading become true
             ? const SizedBox(
                 height: 26,
                 width: 26,
@@ -32,6 +33,7 @@ class CustomNormalButton extends StatelessWidget {
                   color: Colors.black,
                 ),
               )
+            //normal view of button before press on it
             : Text(
                 text,
                 style: const TextStyle(

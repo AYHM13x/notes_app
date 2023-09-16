@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app/constants.dart';
 
 class ColorItem extends StatelessWidget {
   const ColorItem({
@@ -12,7 +13,8 @@ class ColorItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return isSelected
         ? CircleAvatar(
-            backgroundColor: Colors.green,
+            //selected color circle
+            backgroundColor: kPrimaryColor,
             radius: 29,
             child: CircleAvatar(
               backgroundColor: Color(color),
