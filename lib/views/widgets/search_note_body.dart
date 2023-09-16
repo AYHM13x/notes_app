@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_app/cubits/all_notes_cubit/all_notes_cubit.dart';
-import 'package:notes_app/models/note_model.dart';
 import 'package:notes_app/views/widgets/custom_widgets/custom_text_field.dart';
-import 'package:notes_app/views/widgets/note_item.dart';
+import 'package:notes_app/views/widgets/custom_widgets/search_notes_list_view.dart';
 
 class SearchNoteBody extends StatefulWidget {
   const SearchNoteBody({
@@ -16,14 +15,6 @@ class SearchNoteBody extends StatefulWidget {
 
 class _SearchNoteBodyState extends State<SearchNoteBody> {
   String? search;
-
-  List<NoteModel>? filteredNoteList;
-
-  // @override
-  // void initState() {
-  //   BlocProvider.of<AllNotesCubit>(context).fetchAllNotes();
-  //   super.initState();
-  // }
 
   @override
   Widget build(BuildContext context) {
@@ -39,29 +30,7 @@ class _SearchNoteBodyState extends State<SearchNoteBody> {
             BlocProvider.of<AllNotesCubit>(context).searchNote(search ?? "");
           },
         ),
-        Expanded(
-          child: BlocBuilder<AllNotesCubit, AllNotesState>(
-            builder: (context, state) {
-              filteredNoteList =
-                  BlocProvider.of<AllNotesCubit>(context).filteredNoteList!;
-              return Padding(
-                padding: const EdgeInsets.only(top: 16, bottom: 4),
-                child: ListView.builder(
-                  padding: EdgeInsets.zero,
-                  itemCount: filteredNoteList!.length,
-                  itemBuilder: (context, index) {
-                    return Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 4),
-                      child: NoteItem(
-                        note: filteredNoteList![index],
-                      ),
-                    );
-                  },
-                ),
-              );
-            },
-          ),
-        ),
+        const SearchNotesListView(),
       ],
     );
   }
