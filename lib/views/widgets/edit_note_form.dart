@@ -7,6 +7,8 @@ import 'package:notes_app/views/widgets/custom_widgets/custom_normal_button.dart
 import 'package:notes_app/views/widgets/custom_widgets/custom_text_form_field.dart';
 import 'package:notes_app/views/widgets/edit_note_color_list.dart';
 
+import '../../dimensions_of_screen.dart';
+
 class EditNoteForm extends StatefulWidget {
   const EditNoteForm({
     super.key,
@@ -73,8 +75,8 @@ class _EditNoteFormState extends State<EditNoteForm> {
           height: 8,
         ),
         const EditNoteColorList(),
-        const SizedBox(
-          height: 8,
+        SizedBox(
+          height: DimensionsOfScreen.dimensionsOfHeight(context, 20),
         ),
         CustomNormalButton(
           text: "Save",
