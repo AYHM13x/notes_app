@@ -76,7 +76,7 @@ class _EditNoteFormState extends State<EditNoteForm> {
         ),
         const EditNoteColorList(),
         SizedBox(
-          height: DimensionsOfScreen.dimensionsOfHeight(context, 20),
+          height: DimensionsOfScreen.dimensionsOfHeight(context, 25),
         ),
         CustomNormalButton(
           text: "Save",

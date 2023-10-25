@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:notes_app/views/widgets/search_note_body.dart';
+
+import 'bodies/search_note_body.dart';
 
 class SearchNote extends StatelessWidget {
   const SearchNote({super.key});

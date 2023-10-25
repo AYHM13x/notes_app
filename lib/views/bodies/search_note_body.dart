@@ -17,6 +17,13 @@ class _SearchNoteBodyState extends State<SearchNoteBody> {
   String? search;
 
   @override
+  void initState() {
+    BlocProvider.of<AllNotesCubit>(context).filteredNoteList =
+        BlocProvider.of<AllNotesCubit>(context).notesList;
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Column(
       children: [
